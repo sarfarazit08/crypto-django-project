@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--Price Table -->
+<h1>Weather Information</h1>
+
+<br />
+{% for i in qod.contents.quotes %}
+<figure>
+    <blockquote class="blockquote">
+        <p>{{ i.quote }}</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        <cite title="Source Title">{{ i.author }}</cite>
+    </figcaption>
+</figure>
+{% endfor %}
+
+<br />
+<ul>
+    <li>Timezone - {{ weather.timezone }}</li>
+    <li>Longitude - {{ weather.lon }}</li>
+    <li>Latitude - {{ weather.lat }}</li>
+    <li>Temp - {{ weather.current.temp }}</li>
+    <li>Feels_like - {{ weather.current.feels_like }}</li>
+    <li>Humidity - {{ weather.current.humidity }}</li>
+</ul>
+
+{% endblock %}

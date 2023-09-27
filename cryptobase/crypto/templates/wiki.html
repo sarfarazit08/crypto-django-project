@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--Price Table -->
+<h1>Wiki Search Results</h1>
+
+<br />
+
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Recent updates</h6>
+    {% if notfound %}
+    <div class="d-flex text-warning pt-3">
+        <h4>     {{ notfound }}        </h4>
+    </div>
+    {% else %}
+
+        {% for x in wiki.query.search %}
+        <div class="d-flex text-dark pt-3">
+            <p class="pb-3 mb-0 small lh-sm border-bottom">
+                <strong class="d-block text-gray-dark">{{ x.title }}</strong>
+                {{ x.snippet }}
+            </p>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <small class="d-block text-end mt-3">
+        <a href="#">All updates</a>
+    </small>
+</div>
+
+{% endblock %}

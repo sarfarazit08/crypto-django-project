@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--Price Table -->
+<h1>Crypto Currency Prices</h1>
+
+<br/>
+<table class="table table-sm table-striped table-bordered ">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">SYMBOL</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">MARKET CAP</th>
+            <th scope="col">OPENDAY</th>
+            <th scope="col">HIGHDAY</th>
+            <th scope="col">LOWDAY</th>
+            <th scope="col">SUPPLY</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k,v in prices.DISPLAY.items %}
+        <tr>
+            <td><img src="https://www.cryptocompare.com/{{ v.INR.IMAGEURL }}" width="20" height="20" /> {{ k }}</td>
+            <td>{{ v.INR.PRICE }}</td>
+            <td>{{ v.INR.MKTCAP }}</td>
+            <td>{{ v.INR.OPENDAY }}</td>
+            <td>{{ v.INR.HIGHDAY }}</td>
+            <td>{{ v.INR.LOWDAY }}</td>
+            <td>{{ v.INR.SUPPLY }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table class="table table-sm table-striped table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">SYMBOL</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">MARKET CAP</th>
+            <th scope="col">OPENDAY</th>
+            <th scope="col">HIGHDAY</th>
+            <th scope="col">LOWDAY</th>
+            <th scope="col">SUPPLY</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k,v in prices.DISPLAY.items %}
+        <tr>
+            <td><img src="https://www.cryptocompare.com/{{ v.USD.IMAGEURL }}" width="20" height="20" /> {{ k }}</td>
+            <td>{{ v.USD.PRICE }}</td>
+            <td>{{ v.USD.MKTCAP }}</td>
+            <td>{{ v.USD.OPENDAY }}</td>
+            <td>{{ v.USD.HIGHDAY }}</td>
+            <td>{{ v.USD.LOWDAY }}</td>
+            <td>{{ v.USD.SUPPLY }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table class="table table-sm table-striped table-bordered ">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">SYMBOL</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">MARKET CAP</th>
+            <th scope="col">OPENDAY</th>
+            <th scope="col">HIGHDAY</th>
+            <th scope="col">LOWDAY</th>
+            <th scope="col">SUPPLY</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k,v in prices.DISPLAY.items %}
+        <tr>
+            <td><img src="https://www.cryptocompare.com/{{ v.EUR.IMAGEURL }}" width="20" height="20" /> {{ k }}</td>
+            <td>{{ v.EUR.PRICE }}</td>
+            <td>{{ v.EUR.MKTCAP }}</td>
+            <td>{{ v.EUR.OPENDAY }}</td>
+            <td>{{ v.EUR.HIGHDAY }}</td>
+            <td>{{ v.EUR.LOWDAY }}</td>
+            <td>{{ v.EUR.SUPPLY }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

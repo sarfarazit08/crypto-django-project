@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Jumbotron-->
+<div class="p-5 mb-4 bg-light">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Welcome to Crypto News Site..!</h1>
+    <p class="col-md-8 fs-4">Get upto the minute news on Crypto Currency and Blockchain Technology.</p>
+    
+    <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
+  </div>
+</div>
+
+
+<!--News Cards-->
+<div class="row row-cols-1 row-cols-md-4 g-2">
+  {% for x in api.Data %}
+  <div class="col">
+
+    <div class="card h-100">
+      <img src="{{ x.imageurl }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ x.title }}</h5>
+        <p class="card-text">{{ x.body }}</p>
+          <a href="{{ x.url }}" class="btn btn-outline-dark">Read more...</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Published : {{ x.published_on }}</small>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

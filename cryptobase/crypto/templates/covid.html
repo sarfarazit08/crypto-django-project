@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Jumbotron-->
+<div class="p-5 mb-4 bg-light">
+  <div class="container-fluid py-5">
+    
+    {% for i in covid %}
+    <h1 class="display-5 fw-bold">Covid Status of India) till today ({{ i.Date }}) </h1>
+    <p class="col-md-8 fs-4">Confirmed : {{ i.Confirmed }}</p><br />
+    <p class="col-md-8 fs-4">Deaths : {{ i.Deaths }}</p><br />
+    <p class="col-md-8 fs-4">Recovered : {{ i.Recovered }}</p><br />
+    <p class="col-md-8 fs-4">Active : {{ i.Active }}</p><br />
+    {% endfor %}
+    
+  </div>
+</div>
+
+
+
+{% endblock %}
